@@ -1,3 +1,14 @@
+```text
+███╗   ██╗██╗   ██╗████████╗██╗  ██╗██╗  ██╗██╗ ██████╗ ███╗   ██╗
+████╗  ██║╚██╗ ██╔╝╚══██╔══╝██║  ██║╚██╗██╔╝██║██╔═══██╗████╗  ██║
+██╔██╗ ██║ ╚████╔╝    ██║   ███████║ ╚███╔╝ ██║██║   ██║██╔██╗ ██║
+██║╚██╗██║  ╚██╔╝     ██║   ██╔══██║ ██╔██╗ ██║██║   ██║██║╚██╗██║
+██║ ╚████║   ██║      ██║   ██║  ██║██╔╝ ██╗██║╚██████╔╝██║ ╚████║
+╚═╝  ╚═══╝   ╚═╝      ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝  ╚═╝  ╚═══╝
+
+               O F F I C I A L  W E B S I T E
+```
+
 # Nythxion Designs - Portfolio
 
 This repository contains the official **Nythxion Designs Portfolio**, showcasing selected designs, artwork, and creative projects created by Nythxion Designs.
