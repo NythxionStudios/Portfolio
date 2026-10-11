@@ -118,19 +118,31 @@
       display: flex;
       align-items: center;
       gap: 4px;
+      min-width: 0;
+      overflow-x: auto;
+      scrollbar-width: none;
     }
+    .nav-links::-webkit-scrollbar { display: none; }
 
     .nav-links a {
-      padding: 8px 12px;
+      display: inline-flex;
+      min-height: 36px;
+      align-items: center;
+      justify-content: center;
+      padding: 0 12px;
       border: 1px solid transparent;
       border-radius: 7px;
       color: var(--muted);
       font-size: 13px;
+      line-height: 1;
       text-decoration: none;
+      white-space: nowrap;
       transition: background .15s ease, border-color .15s ease, color .15s ease;
     }
 
     .nav-links a:hover,
+    .nav-links a.active,
+    .nav-links a:focus-visible,
     .nav-links a[aria-current="page"] {
       border-color: var(--border);
       background: var(--surface-hover);
@@ -688,11 +700,9 @@
       </a>
 
       <div class="nav-links">
-        <a href="homepage.html#projects">Projects</a>
-        <a href="homepage.html#about">About</a>
-        <a href="homepage.html#links">Links</a>
-        <a href="portfolio.html" aria-current="page">Portfolio</a>
-        <a href="/LegalCenter/">Terms</a>
+        <a href="homepage.html#top">Home</a>
+        <a href="legalcenter.html">Terms</a>
+        <a href="development.html">Development</a>
       </div>
     </nav>
   </header>
