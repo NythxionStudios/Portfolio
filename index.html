@@ -377,6 +377,48 @@
       line-height: 1.55;
     }
 
+    .artwork-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 10px;
+    }
+
+    .artwork-tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 3px 8px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: #11172a;
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+
+    .artwork-tag--type {
+      border-color: rgba(77,163,255,.28);
+      background: rgba(77,163,255,.08);
+      color: #a9d5ff;
+    }
+
+    .artwork-tag--opinion {
+      border-color: rgba(139,92,246,.32);
+      background: rgba(139,92,246,.10);
+      color: #c4b5fd;
+    }
+
+    .artwork-tag-heading {
+      display: block;
+      margin-top: 10px;
+      color: var(--text-muted);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+    }
+
     .review-summary {
       display: block;
       margin-top: 11px;
@@ -780,6 +822,8 @@
       {
         image: "nessstudios-watermark.png",
         title: "Ness Studios",
+        projectTags: ["Logo", "Commissioned", "Branding"],
+        opinionTags: ["Outdated", "Would Redesign"],
         description: "Watermarked with V.1.2.0 of Nythxion Watermarker at 29 September, 2026",
         review: {
           rating: 5,
@@ -796,6 +840,8 @@
        {
             image: "botforge-watermark.png",
             title: "BotForge",
+            projectTags: ["Logo", "Commissioned", "Branding"],
+            opinionTags: ["Outdated", "Would Redesign"],
             description: "Watermarked with V.1.2.0 of Nythxion Watermarker at 29 September, 2026",
             review: {
             rating: 5,
@@ -843,12 +889,40 @@
       return display;
     }
 
+    function createArtworkTags(item, includeHeadings = false) {
+      const wrapper = document.createElement("div");
+      wrapper.className = "artwork-tags";
+
+      for (const tag of item.projectTags || []) {
+        const element = document.createElement("span");
+        element.className = "artwork-tag artwork-tag--type";
+        element.textContent = tag;
+        wrapper.append(element);
+      }
+
+      for (const tag of item.opinionTags || []) {
+        const element = document.createElement("span");
+        element.className = "artwork-tag artwork-tag--opinion";
+        element.textContent = tag;
+        wrapper.append(element);
+      }
+
+      return wrapper;
+    }
+
     function openPreview(item) {
       previewImage.src = item.image;
       previewImage.alt = item.title;
       previewTitle.textContent = item.title;
       previewDescription.textContent = item.description || "";
       previewDescription.hidden = !item.description;
+      const existingTags = document.getElementById("previewTags");
+      if (existingTags) existingTags.remove();
+      if ((item.projectTags && item.projectTags.length) || (item.opinionTags && item.opinionTags.length)) {
+        const tags = createArtworkTags(item);
+        tags.id = "previewTags";
+        previewDescription.after(tags);
+      }
       previewReview.hidden = !item.review;
 
       if (item.review) {
@@ -908,6 +982,10 @@
         description.className = "artwork-description";
         description.textContent = item.description;
         caption.append(description);
+      }
+
+      if ((item.projectTags && item.projectTags.length) || (item.opinionTags && item.opinionTags.length)) {
+        caption.append(createArtworkTags(item));
       }
 
       if (item.review) {
