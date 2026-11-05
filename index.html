@@ -818,45 +818,62 @@
   <a class="back-top" href="#top" aria-label="Back to top">↑</a>
 
   <script>
-    const portfolioItems = [
-      {
+const portfolioItems = [
+    {
+        image: "novalink-technologies-full.png",
+        title: "NOVALINK Technologies - Corporate Identity",
+        projectTags: ["Branding", "Logo Design", "Corporate Identity", "Business Card", "Non-Commissioned"],
+        opinionTags: ["Proud of This"],
+        description: "Watermarked with V.1.2.0 of Nythxion Watermarker at 5 November, 2026",
+        review: {
+            rating: 5,
+            userId: "1271546144341889226",
+            text: "Personal Graphic Design Project by Brightness (Studio Director) / Brand is made up / CONTACT INFORMATION, NAME, ADRESS, COMPANY NAME, ETC. IS FICTIONAL.",
+            ratings: {
+                communication: 5,
+                quality: 5,
+                delivery: 5,
+                overall: 5
+            }
+        }
+    },
+    {
         image: "nythxionstudios-banner-watermark.png",
         title: "Nythxion Studios Banner",
         projectTags: ["Nythxion Graphic", "Branding"],
         opinionTags: ["Pretty Nice", "Simple"],
         description: "Watermarked with V.1.2.0 of Nythxion Watermarker at 18 October, 2026",
         review: {
-          rating: 5,
-          userId: "1271546144341889226",
-          text: "-Official Nythxion Studios Graphic- / Made without any HTML/CSS only Figma",
-          ratings: {
-            communication: 5,
-            quality: 5,
-            delivery: 5,
-            overall: 5 
-          } 
-        }
-        } ,
-        {
-            image: "valorox-ui-downsized-watermark.png",
-            title: "VALOROX Streaming Plattform UI",
-            projectTags: ["UI Design"],
-            opinionTags: ["Proud of This", "Trying out something new"],
-            description: "Watermarked with V.1.2.0 of Nythxion Watermarker at 20 October, 2026",
-            review: {
             rating: 5,
             userId: "1271546144341889226",
-            text: "Personal Project of Brightness (Studio Director, Head Development & Head of Design) / Made without any HTML/CSS only Figma / Brand & movies are made up / Graphic contains third-party copyight-free elements (Photographical content of the movie covers)",
+            text: "-Official Nythxion Studios Graphic-",
             ratings: {
                 communication: 5,
                 quality: 5,
                 delivery: 5,
                 overall: 5
-            } 
-           }  
-         } 
-          
-    ];
+            }
+        }
+    },
+    {
+        image: "valorox-ui-downsized-watermark.png",
+        title: "VALOROX Streaming Plattform UI",
+        projectTags: ["UI Design", "Non-Commissioned"],
+        opinionTags: ["Proud of This", "Trying out something new"],
+        description: "Watermarked with V.1.2.0 of Nythxion Watermarker at 20 October, 2026",
+        review: {
+            rating: 5,
+            userId: "1271546144341889226",
+            text: "Personal Project of Brightness (Studio Director) / Made without any HTML/CSS only Figma / Brand & movies are made up / Graphic contains third-party copyright-free elements (Photographical content of the movie covers)",
+            ratings: {
+                communication: 5,
+                quality: 5,
+                delivery: 5,
+                overall: 5
+            }
+        }
+    }
+];
 
     const galleryGrid = document.getElementById("galleryGrid");
     const emptyState = document.getElementById("emptyState");
